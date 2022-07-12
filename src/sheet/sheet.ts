@@ -3,6 +3,7 @@ import {
   GoogleSpreadsheetWorksheet,
 } from "google-spreadsheet";
 import { configs } from "../config/config";
+import { sleep } from "../utils";
 
 export class GoogleSheet {
   readonly doc: GoogleSpreadsheet;
@@ -21,13 +22,17 @@ export class GoogleSheet {
     await this.sheet.loadCells("A1:Z1");
   };
   addRows = async (data: any) => {
+    // try {
+    //     await this.sheet?.clear();
+    //   } catch (error) {}
     try {
       await this.sheet?.setHeaderRow(["future", "rate", "time"]);
     } catch (error) {
       console.log("error setting up sheet:", error);
     }
     try {
-      await this.sheet?.addRows(data, {
+    await sleep(5000)
+      await this.sheet?.addRow(data, {
         raw: false,
         insert: false,
       });
