@@ -1,0 +1,23 @@
+{
+  "name": "funding-rate",
+  "version": "1.0.0",
+  "description": "A bot that gets funding rates historical and current data from ftx and saves data to google sheet",
+  "main": "src/index.ts",
+  "author": "Dennis Mwangi",
+  "email": "dennis@ngeni.io",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev src/index.ts"
+  },
+  "dependencies": {
+    "@types/google-spreadsheet": "^3.3.0",
+    "@types/node": "^18.0.3",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "ftx-api": "^1.1.13",
+    "google-spreadsheet": "^3.3.0",
+    "ts-node": "^10.8.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  }
+}
